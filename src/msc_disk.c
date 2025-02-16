@@ -46,7 +46,7 @@ uint8_t msc_disk[DISK_SECTOR_NUM][DISK_SECTOR_SIZE] =
       0x30, 0x00,               // Max. root directory entries: 48 (size of root directory table: 3 blocks)
       0x00, 0x1F,               // Total sectors: DISK_SECTOR_NUM -> 7936   todo: change to use parameter
       0xF8,                     // Media descriptor
-      0x0C, 0x00,               // Sectors per FAT: 12 -> yields 12 * 512 / 1,5 = 4096 entries for 4096 clusters todo: user parameter
+      0x0C, 0x00,               // Sectors per FAT: 12 -> yields 12 * 512 / 1,5 = 4096 entries for 4096 clusters
       
       // DOS3.31 BPB special fields
       0x01, 0x00,               // Sectors per track: 1

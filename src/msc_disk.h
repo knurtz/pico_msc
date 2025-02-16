@@ -1,7 +1,8 @@
 #include "pico/stdlib.h"
 
-// todo: turn all these into user parameters
+// todo: turn disk size into user parameter
 #define DISK_SECTOR_NUM         7936       // Disk size 3968k -> 7936 * 512 bytes
+
 #define DISK_SECTOR_SIZE        512
 #define DISK_CLUSTER_SIZE       8           // Cluster size 4096 bytes
 
