@@ -1,0 +1,3 @@
+- readme contents
+- readme generate yes / no
+- disk name
