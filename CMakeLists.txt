@@ -6,19 +6,22 @@ target_include_directories(pico_msc INTERFACE
     src/fatfs/source
 )
 
-include(${CMAKE_CURRENT_LIST_DIR}/ffconf.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/src/ffconf.cmake)
 
 # Add all source code files
 target_sources(pico_msc INTERFACE
+    # Interface for application
+    ${CMAKE_CURRENT_LIST_DIR}/src/pico_msc.c
+
     # Mass storage    
-    ${CMAKE_CURRENT_LIST_DIR}/src/msc_disk.c
-    ${CMAKE_CURRENT_LIST_DIR}/src/flash_functions.c
+    ${CMAKE_CURRENT_LIST_DIR}/src/disk.c
+    ${CMAKE_CURRENT_LIST_DIR}/src/flash.c
     
     # FatFS
     ${CMAKE_CURRENT_LIST_DIR}/src/fat.c
     ${CMAKE_CURRENT_LIST_DIR}/src/fatfs/source/ff.c
     ${CMAKE_CURRENT_LIST_DIR}/src/fatfs/source/ffunicode.c
-    ${CMAKE_CURRENT_LIST_DIR}/src/diskio_picomsc.c
+    ${CMAKE_CURRENT_LIST_DIR}/src/diskio.c
 
     # USB
     ${CMAKE_CURRENT_LIST_DIR}/src/usb_descriptors.c

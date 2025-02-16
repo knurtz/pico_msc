@@ -3,10 +3,14 @@
 
 #include "pico/stdlib.h"
 
+void Flash_Init(void);
+
 uint32_t Flash_ReadQueued(uint32_t lba, uint32_t offset, void* buffer, uint32_t bufsize);
 uint32_t Flash_WriteQueued(uint32_t lba, uint32_t offset, void* buffer, uint32_t bufsize);
 
 bool Flash_WriteStartSection(void);
 bool Flash_WriteCurrentSection(void);
+
+void Flash_WriteCycle(bool forced);
 
 #endif /* FLASH_FUNCTIONS_H */

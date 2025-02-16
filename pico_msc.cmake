@@ -1,5 +1,8 @@
 macro(enable_pico_msc project)
     add_subdirectory(pico_msc)
+    target_include_directories(${project} PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/src
+    )
     pico_set_linker_script(${project} ${CMAKE_CURRENT_SOURCE_DIR}/pico_msc/linker/custom_linker_script.ld)
     add_custom_command(TARGET ${project}
         POST_BUILD
