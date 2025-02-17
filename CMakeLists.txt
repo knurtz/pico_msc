@@ -6,7 +6,10 @@ target_include_directories(pico_msc INTERFACE
     src/fatfs/source
 )
 
-include(${CMAKE_CURRENT_LIST_DIR}/src/ffconf.cmake)
+#include(${CMAKE_CURRENT_LIST_DIR}/src/ffconf.cmake)
+target_precompile_headers(pico_msc INTERFACE 
+    ${CMAKE_CURRENT_LIST_DIR}/src/ffconf.h
+)
 
 # Add all source code files
 target_sources(pico_msc INTERFACE
